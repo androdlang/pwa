@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Awesome Game</title>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0, user-scalable = 0, minimal-ui" />
+        <style type = "text/css">
+            body{
+                background: #ecf0f1;
+                padding: 0px;
+                margin: 0px;
+            }
+            canvas{
+                display:block;
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+        console.log("check serviceWorker");
+            if ('serviceWorker' in navigator) {
+              console.log("in navigator");
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js', {scope: '/'}).then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+            let deferredPrompt;
+            window.addEventListener('beforeinstallprompt', function (e) {
+                console.log('beforeinstallprompt triggered');
+                e.preventDefault();
+                deferredPrompt = e;
+                modal.style.display = 'block';
+            });
+            // Get the modal
+            var modal = document.getElementById('myModal');
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName('close')[0];
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = 'none';
+            }
+            function offlinePrompt() {
+                deferredPrompt.prompt();
+            }
+        </script>
+        <script type="text/javascript" src="phaser.min.js"></script>
+        <script type="text/javascript" src="game.js"></script>
+    </head>
+    <body>
+    </body>
+</html>
