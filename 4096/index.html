@@ -18,6 +18,19 @@
                 transform: translate(-50%, -50%);
             }
         </style>
+        <script type="text/javascript" src="phaser.min.js"></script>
+        <script type="text/javascript" src="game.js"></script>
+    </head>
+    <body>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Add to home screen?</p>
+                <button onclick="offlinePrompt()">Install</button>
+            </div>
+        </div>
         <script>
         console.log("check serviceWorker");
             if ('serviceWorker' in navigator) {
@@ -55,9 +68,6 @@
                 deferredPrompt.prompt();
             }
         </script>
-        <script type="text/javascript" src="phaser.min.js"></script>
-        <script type="text/javascript" src="game.js"></script>
-    </head>
-    <body>
+        
     </body>
 </html>
