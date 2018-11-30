@@ -2,7 +2,7 @@
     "name": "Phaser PWA",
     "short_name": "Phaser",
     "description": "Phaser template Web App.",
-    "start_url": "/",
+    "start_url": "/pwa/test1/",
     "background_color": "#000000",
     "theme_color": "#0f4a73",
     "display": "standalone",
