@@ -12,15 +12,6 @@
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Add to home screen?</p>
-                <button onclick="offlinePrompt()">Install</button>
-            </div>
-        </div>
         
         <script>
         console.log("check serviceWorker");
@@ -34,7 +25,7 @@
                     });
                 });
             }
-            
+            /*
             let deferredPrompt;
             window.addEventListener('beforeinstallprompt', function (e) {
                 console.log('beforeinstallprompt triggered');
@@ -59,7 +50,7 @@
             function offlinePrompt() {
                 deferredPrompt.prompt();
             }
-            
+            */
         </script>
         <script src="https://cdn.jsdelivr.net/gh/photonstorm/phaser@3.10.1/dist/phaser.min.js"></script>
         <script src="js/game.js"></script>
