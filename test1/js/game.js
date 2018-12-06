@@ -3,6 +3,7 @@ var config = {
   parent: 'phaser-example',
   width: window.innerWidth,
   height: window.innerHeight,
+  backgroundColor: '#4488AA',
   scene: {
     preload: preload,
     create: create
@@ -16,7 +17,6 @@ function preload() {
 }
 
 function create() {
-  this.stage.backgroundColor = "#4488AA";
   this.logo = this.add.image(0, 0, 'logo');
   this.logo.setScale(0.5);
 
